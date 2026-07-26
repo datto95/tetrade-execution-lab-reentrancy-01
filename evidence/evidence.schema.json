@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Tetrade Execution Lab Evidence",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "labId",
+    "toolchain",
+    "execution",
+    "assertions",
+    "artifacts",
+    "generatedAt"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schemaVersion": {
+      "type": "string",
+      "const": "1.0.0"
+    },
+    "labId": {
+      "type": "string",
+      "const": "reentrancy-01"
+    },
+    "toolchain": {
+      "type": "object",
+      "required": ["foundry", "solc"],
+      "additionalProperties": false,
+      "properties": {
+        "foundry": { "type": "string", "minLength": 1 },
+        "solc": { "type": "string", "minLength": 1 }
+      }
+    },
+    "execution": {
+      "type": "object",
+      "required": ["command", "exitCode", "passed", "failed"],
+      "additionalProperties": false,
+      "properties": {
+        "command": { "type": "string", "minLength": 1 },
+        "exitCode": { "type": "integer", "minimum": 0 },
+        "passed": { "type": "integer", "minimum": 0 },
+        "failed": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "assertions": {
+      "type": "object",
+      "required": [
+        "exploitConfirmed",
+        "fixConfirmed",
+        "negativeControlConfirmed"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "exploitConfirmed": { "type": "boolean" },
+        "fixConfirmed": { "type": "boolean" },
+        "negativeControlConfirmed": { "type": "boolean" }
+      }
+    },
+    "artifacts": {
+      "type": "object",
+      "required": ["sourceHash", "testHash"],
+      "additionalProperties": false,
+      "properties": {
+        "sourceHash": {
+          "type": "string",
+          "pattern": "^sha256:[a-f0-9]{64}$"
+        },
+        "testHash": {
+          "type": "string",
+          "pattern": "^sha256:[a-f0-9]{64}$"
+        }
+      }
+    },
+    "generatedAt": {
+      "type": "string",
+      "minLength": 20
+    }
+  }
+}

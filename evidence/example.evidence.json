@@ -1,0 +1,24 @@
+{
+  "schemaVersion": "1.0.0",
+  "labId": "reentrancy-01",
+  "toolchain": {
+    "foundry": "forge 1.2.3",
+    "solc": "0.8.24"
+  },
+  "execution": {
+    "command": "forge test -vvv",
+    "exitCode": 0,
+    "passed": 3,
+    "failed": 0
+  },
+  "assertions": {
+    "exploitConfirmed": true,
+    "fixConfirmed": true,
+    "negativeControlConfirmed": true
+  },
+  "artifacts": {
+    "sourceHash": "sha256:0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef",
+    "testHash": "sha256:abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789"
+  },
+  "generatedAt": "2026-07-25T00:00:00Z"
+}
