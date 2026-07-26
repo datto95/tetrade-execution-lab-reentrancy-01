@@ -1,5 +1,7 @@
 # reentrancy-01
 
+[![CI](https://github.com/datto95/tetrade-execution-lab-reentrancy-01/actions/workflows/ci.yml/badge.svg)](https://github.com/datto95/tetrade-execution-lab-reentrancy-01/actions/workflows/ci.yml)
+
 Didactic proof of concept for the Tétrade execution lab.
 
 This lab demonstrates, with executable tests, a reentrancy exploit against a vulnerable vault and a corrected vault that blocks the same attack.
