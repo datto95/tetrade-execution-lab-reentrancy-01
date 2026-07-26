@@ -1,6 +1,6 @@
 SHELL := /bin/sh
 
-.PHONY: install build test evidence validate clean
+.PHONY: install build test gas-report evidence validate clean
 
 install:
 	forge install foundry-rs/forge-std
@@ -10,6 +10,9 @@ build:
 
 test:
 	forge test -vvv
+
+gas-report:
+	forge test --gas-report > evidence/gas-report.txt
 
 evidence:
 	python3 scripts/generate_evidence.py

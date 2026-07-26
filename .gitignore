@@ -7,4 +7,5 @@ lib/
 .env
 .venv/
 evidence/evidence.json
+evidence/gas-report.txt
 evidence/last-forge-test-output.log

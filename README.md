@@ -47,6 +47,7 @@ python3 scripts/generate_evidence.py --validate-only evidence/evidence.json
 make install
 make build
 make test
+make gas-report
 make evidence
 make validate
 ```
