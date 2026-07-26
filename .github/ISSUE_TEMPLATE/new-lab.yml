@@ -1,0 +1,113 @@
+name: New Lab Proposal
+description: Propose a new execution lab following the Tetrade didactic standard.
+title: "lab: <lab-id> proposal"
+labels:
+  - lab
+  - proposal
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this template to propose a new lab with clear exploit/fix scope and reproducibility expectations.
+
+  - type: input
+    id: lab_id
+    attributes:
+      label: Lab ID
+      description: Use kebab-case and numeric suffix, for example access-control-01.
+      placeholder: access-control-01
+    validations:
+      required: true
+
+  - type: dropdown
+    id: vulnerability_family
+    attributes:
+      label: Vulnerability family
+      description: Select the main family addressed by this lab.
+      options:
+        - Reentrancy
+        - Access Control
+        - Oracle Manipulation
+        - Arithmetic / Precision
+        - Signature Validation
+        - Denial of Service
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem_statement
+    attributes:
+      label: Problem statement
+      description: Explain the vulnerability scenario and why it matters.
+      placeholder: Describe the exploit path and impact in a concrete way.
+    validations:
+      required: true
+
+  - type: textarea
+    id: learning_objectives
+    attributes:
+      label: Learning objectives
+      description: What should a learner prove or understand after running the lab?
+      placeholder: |
+        - Objective 1
+        - Objective 2
+        - Objective 3
+    validations:
+      required: true
+
+  - type: textarea
+    id: implementation_scope
+    attributes:
+      label: Implementation scope
+      description: Define minimum required artifacts for this lab.
+      value: |
+        - Vulnerable contract
+        - Fixed contract
+        - Attacker/simulator contract
+        - Tests for exploit, fix, and negative control
+        - Evidence schema compatibility
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance_criteria
+    attributes:
+      label: Acceptance criteria
+      description: Define objective done conditions.
+      value: |
+        - [ ] forge build passes
+        - [ ] forge test passes
+        - [ ] exploit test demonstrates real impact
+        - [ ] fix test blocks the exploit
+        - [ ] negative control prevents false positives
+        - [ ] evidence generation and validation pass
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidence_expectation
+    attributes:
+      label: Evidence expectation
+      description: Specify what the evidence output must contain beyond baseline schema fields.
+      placeholder: Mention required metrics, traces, or additional assertions.
+    validations:
+      required: false
+
+  - type: textarea
+    id: out_of_scope
+    attributes:
+      label: Out of scope
+      description: Explicitly list what this lab will not cover.
+      placeholder: Integrations, UI concerns, protocol-specific internals, etc.
+    validations:
+      required: true
+
+  - type: textarea
+    id: references
+    attributes:
+      label: References
+      description: Optional links to incidents, specs, or audits that inspired the lab.
+      placeholder: Add relevant links.
+    validations:
+      required: false
