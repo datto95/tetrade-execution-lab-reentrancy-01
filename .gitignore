@@ -5,6 +5,6 @@ coverage/
 lib/
 *.log
 .env
-.evn/
+.venv/
 evidence/evidence.json
 evidence/last-forge-test-output.log
